@@ -1,10 +1,3 @@
-allow_embedding: true
-package_name: Carbaglu_Acute_Indication_Caluclator
-name: M3 App 2
-startup_form: Form1
-renamed: true
-runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
-  server_spec: null}
 dependencies:
 - app_id: BESIAEKXVCEDFXFV
   version: {dev: false}
@@ -12,3 +5,11 @@ services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}
+package_name: Carbaglu_Acute_Indication_Caluclator
+allow_embedding: true
+name: Carbaglu Calculator
+runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
+  server_spec: null}
+metadata: {title: Carbaglu acute indication calculator}
+startup_form: Form1
+renamed: true
