@@ -15,9 +15,7 @@ class Form1(Form1Template):
     
     
   def calculate_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    #if int(self.ammonia_factor) < 0 or int(self.ammonia_factor) >1000:
-    
+    """This method is called when calculate benefit is clicked"""
     if self.protein_factor.selected_value == "Normal":
       self.protein_calc = int(1)
     elif self.protein_factor.selected_value == "Half Protein":
@@ -35,7 +33,7 @@ class Form1(Form1Template):
       alert("Please fill all fields!")
       self.answerbox.text = None
     self.ammonia_calc = self.ammonia_factor.text
-    self.benefit_factor = (self.protein_calc*self.risk_calc*self.ammonia_calc)/160
+    self.benefit_factor = round((self.protein_calc*self.risk_calc*self.ammonia_calc)/140, 2)
     if self.ammonia_calc > 1000:
       alert("Ammonia must be less than 1000!")
       self.ammonia_factor.text = None
@@ -49,7 +47,7 @@ class Form1(Form1Template):
   pass
 
   def reset_click(self, **event_args):
-    """This method is called when the button is clicked"""
+    """Wipes fields when the reset button is clicked"""
     self.protein_factor.selected_value = None
     self.risk_factor.selected_value = None
     self.ammonia_factor.text = None
